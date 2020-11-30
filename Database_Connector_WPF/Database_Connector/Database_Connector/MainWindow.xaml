@@ -3,14 +3,22 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Database_Connector"
         mc:Ignorable="d"
-        Title="MainWindow" MinHeight="450" MinWidth="800" WindowState="Maximized">
+        Title="Database Connector" MinHeight="450" MinWidth="800" WindowState="Maximized">
 
     <StackPanel>
 
         <Label>Pruebas conexión base datos</Label>
-        <DataGrid x:Name="dgPruebas" Height="300" ItemsSource="{Binding Path=LoadDataBinding}"></DataGrid>
+        <DataGrid x:Name="dgPruebas" ItemsSource="{Binding Path=LoadDataBinding}">
+            <DataGrid.Height>300</DataGrid.Height>
+            <DataGrid.AutoGenerateColumns>False</DataGrid.AutoGenerateColumns>
+            <DataGrid.CanUserAddRows>False</DataGrid.CanUserAddRows>
+            <DataGrid.CanUserResizeRows>False</DataGrid.CanUserResizeRows>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=id}" Header="Identificador" IsReadOnly="true"/>
+                <DataGridTextColumn Binding="{Binding Path=nombre}" Header="Nombre" IsReadOnly="true"/>
+            </DataGrid.Columns>
+        </DataGrid>
         <Button Click="Button_Click" Height="50" Width="150">
             <Button.Content>Cargar datos</Button.Content>
         </Button>
