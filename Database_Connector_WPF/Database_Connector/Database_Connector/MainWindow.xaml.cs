@@ -33,7 +33,7 @@ namespace Database_Connector {
 
         }
 
-        private void btnNewReg_Click() {
+        private void btnNewReg_Click(object sender, RoutedEventArgs e) {
 
         }
     }
