@@ -32,5 +32,9 @@ namespace Database_Connector {
         private void btnReloadData_Click(object sender, RoutedEventArgs e) {
 
         }
+
+        private void btnNewReg_Click() {
+
+        }
     }
 }
