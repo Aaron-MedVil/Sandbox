@@ -22,22 +22,41 @@
         </Grid.RowDefinitions>
 
         <!-- Botonera -->
-        <DockPanel>
+        <StackPanel>
             <Grid.Column>0</Grid.Column>
             <Grid.RowSpan>3</Grid.RowSpan>
-            <DockPanel.VerticalAlignment>Top</DockPanel.VerticalAlignment>
-            <DockPanel.Margin>5, 5, 5, 0</DockPanel.Margin>
-            <DockPanel.Height>Auto</DockPanel.Height>
-            <DockPanel.Width>Auto</DockPanel.Width>
-            <DockPanel.LastChildFill>True</DockPanel.LastChildFill>
+            <StackPanel.Background>Aquamarine</StackPanel.Background>
+            <StackPanel.Orientation>Vertical</StackPanel.Orientation>
+            
+            <!-- Panel de botones -->
+            <DockPanel>
+                <DockPanel.VerticalAlignment>Top</DockPanel.VerticalAlignment>
+                <DockPanel.Height>Auto</DockPanel.Height>
+                <DockPanel.Width>Auto</DockPanel.Width>
+                <DockPanel.LastChildFill>True</DockPanel.LastChildFill>
 
-            <!-- Boton actualizar datos -->
-            <Button x:Name="btnReloadData" Click="btnReloadData_Click">
-                <Button.Content>Actualizar datos</Button.Content>
-                <Button.Height>50</Button.Height>
-            </Button>
-        </DockPanel>
-        
+                <StackPanel>
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Margin" Value="5, 2.5"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    
+                    <!-- Boton actualizar datos -->
+                    <Button x:Name="btnReloadData" Click="btnReloadData_Click">
+                        <Button.Content>Actualizar datos</Button.Content>
+                        <Button.Height>30</Button.Height>
+                    </Button>
+
+                    <!-- Boton nuevo registro -->
+                    <Button x:Name="btnNewReg" Click="btnNewReg_Click">
+                        <Button.Content>Nuevo registro</Button.Content>
+                        <Button.Height>30</Button.Height>
+                    </Button>
+                </StackPanel>
+            </DockPanel>
+        </StackPanel>
+
         <!-- Formulario -->
         <StackPanel x:Name="gridForm">
             <StackPanel.Orientation>Horizontal</StackPanel.Orientation>
