@@ -9,7 +9,8 @@ namespace Database_Connector {
 
     public partial class MainWindow : Window {
 
-        private MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString);
+        // new MySqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString);
+        private MySqlConnection conn = null;
         private MySqlDataReader myReader = null;
 
         /// <summary>Funcion que carga los componentes</summary>
@@ -33,10 +34,6 @@ namespace Database_Connector {
             finally { conn.Close(); }*/
         }
 
-        private void btnReloadData_Click(object sender, RoutedEventArgs e) {  }
-
-        private void btnNewReg_Click(object sender, RoutedEventArgs e) {  }
-
         /// <summary>Eventos para desplazarse por los registros</summary>
         /// <param name="sender">Objeto que ejecuta la accion</param>
         /// <param name="e">Argumentos de la accion</param>
@@ -46,5 +43,11 @@ namespace Database_Connector {
 
             MessageBox.Show(mi.Tag.ToString());
         }
+
+        private void btnReloadData_Click(object sender, RoutedEventArgs e) { }
+
+        private void btnNewReg_Click(object sender, RoutedEventArgs e) { }
+
+        private void btnRemoveReg_Click(object sender, RoutedEventArgs e) {  }
     }
 }

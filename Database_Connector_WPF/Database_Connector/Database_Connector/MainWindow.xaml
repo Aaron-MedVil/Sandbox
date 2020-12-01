@@ -9,19 +9,41 @@
 
     <!-- Resources -->
     <Window.Resources>
-        <Style TargetType="MenuItem" x:Key="miForm">
-            <Setter Property="Height" Value="40"/>
-            <Setter Property="Padding" Value="20, 0, 20, 0"/>
-        </Style>
-        <Style TargetType="fa:FontAwesome" x:Key="miFormIcon">
-            <Setter Property="FontSize" Value="30"/>
-            <Setter Property="FontWeight" Value="Bold"/>
+        <Style TargetType="Menu" x:Key="menuFormStyle">
+            <Style.Resources>
+                <Style TargetType="MenuItem">
+                    <Setter Property="Height" Value="40"/>
+                    <Setter Property="Padding" Value="20, 0, 20, 0"/>
+                    <Style.Resources>
+                        <Style TargetType="fa:FontAwesome">
+                            <Setter Property="FontSize" Value="30"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                        </Style>
+                    </Style.Resources>
+                </Style>
+            </Style.Resources>
         </Style>
         <Style TargetType="Label" x:Key="labelTitle">
             <Setter Property="FontSize" Value="35"/>
             <Setter Property="FontStyle" Value="Italic"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="Button" x:Key="iconBtnContent">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Margin" Value="5, 2.5"/>
+            <Style.Resources>
+                <Style TargetType="DockPanel">
+                    <Style.Resources>
+                        <Style TargetType="fa:FontAwesome">
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                        </Style>
+                        <Style TargetType="Label">
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                        </Style>
+                    </Style.Resources>
+                </Style>
+            </Style.Resources>
         </Style>
     </Window.Resources>
 
@@ -68,27 +90,28 @@
 
                 <!-- Panel Botonera -->
                 <StackPanel>
-                    <StackPanel.Resources>
-                        <Style TargetType="{x:Type Button}">
-                            <Setter Property="Margin" Value="5, 2.5"/>
-                        </Style>
-                    </StackPanel.Resources>
-                    
+
                     <!-- Boton actualizar datos -->
-                    <Button x:Name="btnReloadData" Click="btnReloadData_Click">
-                        <Button.Height>30</Button.Height>
+                    <Button x:Name="btnReloadData" Click="btnReloadData_Click" Style="{StaticResource iconBtnContent}">
                         <DockPanel>
-                            <fa:FontAwesome Icon="Refresh" VerticalAlignment="Center"/>
-                            <Label Content="Pruebas" VerticalAlignment="center"/>
+                            <fa:FontAwesome Icon="Refresh"/>
+                            <Label Content="Pruebas"/>
                         </DockPanel>
                     </Button>
 
                     <!-- Boton nuevo registro -->
-                    <Button x:Name="btnNewReg" Click="btnNewReg_Click">
-                        <Button.Height>30</Button.Height>
+                    <Button x:Name="btnNewReg" Click="btnNewReg_Click" Style="{StaticResource iconBtnContent}">
                         <DockPanel>
-                            <fa:FontAwesome Icon="Plus" VerticalAlignment="Center"/>
-                            <Label Content="Nuevo registro" VerticalAlignment="Center"/>
+                            <fa:FontAwesome Icon="Plus"/>
+                            <Label Content="Nuevo registro"/>
+                        </DockPanel>
+                    </Button>
+
+                    <!-- Eliminar registro -->
+                    <Button x:Name="btnRemoveReg" Click="btnRemoveReg_Click" Style="{StaticResource iconBtnContent}">
+                        <DockPanel>
+                            <fa:FontAwesome Icon="Trash"/>
+                            <Label Content="Eliminar registro"/>
                         </DockPanel>
                     </Button>
                 </StackPanel>
@@ -103,42 +126,42 @@
             <Grid.Row>1</Grid.Row>
             
             <!-- Menu superior -->
-            <Menu>
+            <Menu Style="{StaticResource menuFormStyle}">
                 <Menu.HorizontalAlignment>Center</Menu.HorizontalAlignment>
                 <Menu.Height>40</Menu.Height>
 
                 <!-- Primer registro -->
-                <MenuItem Style="{StaticResource miForm}" Click="MenuItem_Click">
+                <MenuItem Click="MenuItem_Click">
                     <MenuItem.Tag>primerRegistro</MenuItem.Tag>
                     <MenuItem.Header>
-                        <fa:FontAwesome Icon="AngleDoubleLeft" Style="{StaticResource miFormIcon}"/>
+                        <fa:FontAwesome Icon="AngleDoubleLeft"/>
                     </MenuItem.Header>
                 </MenuItem>
                 <Separator/>
                 
                 <!-- Registro Siguiente -->
-                <MenuItem Style="{StaticResource miForm}" Click="MenuItem_Click">
+                <MenuItem Click="MenuItem_Click">
                     <MenuItem.Tag>registroSiguiente</MenuItem.Tag>
                     <MenuItem.Header>
-                        <fa:FontAwesome Icon="AngleLeft" Style="{StaticResource miFormIcon}"/>
+                        <fa:FontAwesome Icon="AngleLeft"/>
                     </MenuItem.Header>
                 </MenuItem>
                 <Separator/>
                 
                 <!-- Registro anterior -->
-                <MenuItem Style="{StaticResource miForm}" Click="MenuItem_Click">
+                <MenuItem Click="MenuItem_Click">
                     <MenuItem.Tag>registoAnterior</MenuItem.Tag>
                     <MenuItem.Header>
-                        <fa:FontAwesome Icon="AngleRight" Style="{StaticResource miFormIcon}"/>
+                        <fa:FontAwesome Icon="AngleRight"/>
                     </MenuItem.Header>
                 </MenuItem>
                 <Separator/>
                 
                 <!-- Ultimo registro -->
-                <MenuItem Style="{StaticResource miForm}" Click="MenuItem_Click">
+                <MenuItem Click="MenuItem_Click">
                     <MenuItem.Tag>ultimoRegistro</MenuItem.Tag>
                     <MenuItem.Header>
-                        <fa:FontAwesome Icon="AngleDoubleRight" Style="{StaticResource miFormIcon}"/>
+                        <fa:FontAwesome Icon="AngleDoubleRight"/>
                     </MenuItem.Header>
                 </MenuItem>
             </Menu>
@@ -147,7 +170,7 @@
             <StackPanel>
                 <StackPanel.Orientation>Vertical</StackPanel.Orientation>
                 <StackPanel.Margin>10</StackPanel.Margin>
-                <TextBox Text="Pruebas" Height="25" VerticalContentAlignment="Center"/>
+                <!-- <TextBox Text="Pruebas" Height="25" VerticalContentAlignment="Center"/> -->
             </StackPanel>
         </StackPanel>
         
