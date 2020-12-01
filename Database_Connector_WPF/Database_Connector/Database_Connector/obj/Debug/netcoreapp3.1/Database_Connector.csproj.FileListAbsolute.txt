@@ -24,8 +24,9 @@ D:\Github\Sandbox\Database_Connector_WPF\Database_Connector\Database_Connector\o
 D:\Github\Sandbox\Database_Connector_WPF\Database_Connector\Database_Connector\obj\Debug\netcoreapp3.1\Database_Connector.g.resources
 D:\Github\Sandbox\Database_Connector_WPF\Database_Connector\Database_Connector\obj\Debug\netcoreapp3.1\Database_Connector.AssemblyInfoInputs.cache
 D:\Github\Sandbox\Database_Connector_WPF\Database_Connector\Database_Connector\obj\Debug\netcoreapp3.1\Database_Connector.AssemblyInfo.cs
-D:\Github\Sandbox\Database_Connector_WPF\Database_Connector\Database_Connector\obj\Debug\netcoreapp3.1\Database_Connector.csproj.CoreCompileInputs.cache
 D:\Github\Sandbox\Database_Connector_WPF\Database_Connector\Database_Connector\obj\Debug\netcoreapp3.1\Database_Connector.csproj.CopyComplete
 D:\Github\Sandbox\Database_Connector_WPF\Database_Connector\Database_Connector\obj\Debug\netcoreapp3.1\Database_Connector.dll
 D:\Github\Sandbox\Database_Connector_WPF\Database_Connector\Database_Connector\obj\Debug\netcoreapp3.1\Database_Connector.pdb
 D:\Github\Sandbox\Database_Connector_WPF\Database_Connector\Database_Connector\obj\Debug\netcoreapp3.1\Database_Connector.genruntimeconfig.cache
+D:\Github\Sandbox\Database_Connector_WPF\Database_Connector\Database_Connector\bin\Debug\netcoreapp3.1\FontAwesome.WPF.dll
+D:\Github\Sandbox\Database_Connector_WPF\Database_Connector\Database_Connector\obj\Debug\netcoreapp3.1\Database_Connector.csproj.CoreCompileInputs.cache

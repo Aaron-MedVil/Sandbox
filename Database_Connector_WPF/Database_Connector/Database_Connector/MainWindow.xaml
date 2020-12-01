@@ -3,9 +3,29 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
         mc:Ignorable="d"
         Title="Database Connector" MinHeight="450" MinWidth="800" WindowState="Maximized" Loaded="Window_Loaded">
 
+    <!-- Resources -->
+    <Window.Resources>
+        <Style TargetType="MenuItem" x:Key="miForm">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Padding" Value="20, 0, 20, 0"/>
+        </Style>
+        <Style TargetType="fa:FontAwesome" x:Key="miFormIcon">
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style TargetType="Label" x:Key="labelTitle">
+            <Setter Property="FontSize" Value="35"/>
+            <Setter Property="FontStyle" Value="Italic"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+
+    <!-- Content -->
     <Grid>
 
         <!-- Definicion de columnas -->
@@ -20,6 +40,17 @@
             <RowDefinition Height="2*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        
+        <!-- Title -->
+        <Grid>
+            <Grid.Row>0</Grid.Row>
+            <Grid.Column>1</Grid.Column>
+            <Grid.Background>LightYellow</Grid.Background>
+            <StackPanel>
+                <StackPanel.VerticalAlignment>Center</StackPanel.VerticalAlignment>
+                <Label Content="REGISTROS USUARIOS" Style="{StaticResource labelTitle}"/>
+            </StackPanel>
+        </Grid>
 
         <!-- Botonera -->
         <StackPanel>
@@ -35,6 +66,7 @@
                 <DockPanel.Width>Auto</DockPanel.Width>
                 <DockPanel.LastChildFill>True</DockPanel.LastChildFill>
 
+                <!-- Panel Botonera -->
                 <StackPanel>
                     <StackPanel.Resources>
                         <Style TargetType="{x:Type Button}">
@@ -44,14 +76,20 @@
                     
                     <!-- Boton actualizar datos -->
                     <Button x:Name="btnReloadData" Click="btnReloadData_Click">
-                        <Button.Content>Actualizar datos</Button.Content>
                         <Button.Height>30</Button.Height>
+                        <DockPanel>
+                            <fa:FontAwesome Icon="Refresh" VerticalAlignment="Center"/>
+                            <Label Content="Pruebas" VerticalAlignment="center"/>
+                        </DockPanel>
                     </Button>
 
                     <!-- Boton nuevo registro -->
                     <Button x:Name="btnNewReg" Click="btnNewReg_Click">
-                        <Button.Content>Nuevo registro</Button.Content>
                         <Button.Height>30</Button.Height>
+                        <DockPanel>
+                            <fa:FontAwesome Icon="Plus" VerticalAlignment="Center"/>
+                            <Label Content="Nuevo registro" VerticalAlignment="Center"/>
+                        </DockPanel>
                     </Button>
                 </StackPanel>
             </DockPanel>
@@ -59,10 +97,58 @@
 
         <!-- Formulario -->
         <StackPanel x:Name="gridForm">
-            <StackPanel.Orientation>Horizontal</StackPanel.Orientation>
+            <StackPanel.Orientation>Vertical</StackPanel.Orientation>
             <StackPanel.Background>LightSlateGray</StackPanel.Background>
             <Grid.Column>1</Grid.Column>
             <Grid.Row>1</Grid.Row>
+            
+            <!-- Menu superior -->
+            <Menu>
+                <Menu.HorizontalAlignment>Center</Menu.HorizontalAlignment>
+                <Menu.Height>40</Menu.Height>
+
+                <!-- Primer registro -->
+                <MenuItem Style="{StaticResource miForm}" Click="MenuItem_Click">
+                    <MenuItem.Tag>primerRegistro</MenuItem.Tag>
+                    <MenuItem.Header>
+                        <fa:FontAwesome Icon="AngleDoubleLeft" Style="{StaticResource miFormIcon}"/>
+                    </MenuItem.Header>
+                </MenuItem>
+                <Separator/>
+                
+                <!-- Registro Siguiente -->
+                <MenuItem Style="{StaticResource miForm}" Click="MenuItem_Click">
+                    <MenuItem.Tag>registroSiguiente</MenuItem.Tag>
+                    <MenuItem.Header>
+                        <fa:FontAwesome Icon="AngleLeft" Style="{StaticResource miFormIcon}"/>
+                    </MenuItem.Header>
+                </MenuItem>
+                <Separator/>
+                
+                <!-- Registro anterior -->
+                <MenuItem Style="{StaticResource miForm}" Click="MenuItem_Click">
+                    <MenuItem.Tag>registoAnterior</MenuItem.Tag>
+                    <MenuItem.Header>
+                        <fa:FontAwesome Icon="AngleRight" Style="{StaticResource miFormIcon}"/>
+                    </MenuItem.Header>
+                </MenuItem>
+                <Separator/>
+                
+                <!-- Ultimo registro -->
+                <MenuItem Style="{StaticResource miForm}" Click="MenuItem_Click">
+                    <MenuItem.Tag>ultimoRegistro</MenuItem.Tag>
+                    <MenuItem.Header>
+                        <fa:FontAwesome Icon="AngleDoubleRight" Style="{StaticResource miFormIcon}"/>
+                    </MenuItem.Header>
+                </MenuItem>
+            </Menu>
+
+            <!-- Formulario -->
+            <StackPanel>
+                <StackPanel.Orientation>Vertical</StackPanel.Orientation>
+                <StackPanel.Margin>10</StackPanel.Margin>
+                <TextBox Text="Pruebas" Height="25" VerticalContentAlignment="Center"/>
+            </StackPanel>
         </StackPanel>
         
         <!-- DataTable -->

@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Data;
 using System.Windows;
+using System.Windows.Controls;
 using MySql.Data.MySqlClient;
 
 namespace Database_Connector {
@@ -14,6 +15,9 @@ namespace Database_Connector {
         /// <summary>Funcion que carga los componentes</summary>
         public MainWindow() => InitializeComponent();
 
+        /// <summary>Carga los datos iniciales de la aplicacion</summary>
+        /// <param name="sender">Objeto que ejecuta la accion</param>
+        /// <param name="e">Argumentos de la accion</param>
         private void Window_Loaded(object sender, RoutedEventArgs e) {
 
             /*try {
@@ -29,12 +33,18 @@ namespace Database_Connector {
             finally { conn.Close(); }*/
         }
 
-        private void btnReloadData_Click(object sender, RoutedEventArgs e) {
+        private void btnReloadData_Click(object sender, RoutedEventArgs e) {  }
 
-        }
+        private void btnNewReg_Click(object sender, RoutedEventArgs e) {  }
 
-        private void btnNewReg_Click(object sender, RoutedEventArgs e) {
+        /// <summary>Eventos para desplazarse por los registros</summary>
+        /// <param name="sender">Objeto que ejecuta la accion</param>
+        /// <param name="e">Argumentos de la accion</param>
+        private void MenuItem_Click(object sender, RoutedEventArgs e) {
 
+            MenuItem mi = (MenuItem)sender;
+
+            MessageBox.Show(mi.Tag.ToString());
         }
     }
 }

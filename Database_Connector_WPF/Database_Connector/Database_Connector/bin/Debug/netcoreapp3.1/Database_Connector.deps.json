@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v3.1": {
       "Database_Connector/1.0.0": {
         "dependencies": {
+          "FontAwesome.WPF": "4.7.0.9",
           "MySql.Data": "8.0.22"
         },
         "runtime": {
@@ -24,6 +25,14 @@
           "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
             "assemblyVersion": "1.8.2.0",
             "fileVersion": "1.8.18099.1"
+          }
+        }
+      },
+      "FontAwesome.WPF/4.7.0.9": {
+        "runtime": {
+          "lib/net40/FontAwesome.WPF.dll": {
+            "assemblyVersion": "4.7.0.37774",
+            "fileVersion": "4.7.0.9"
           }
         }
       },
@@ -964,6 +973,13 @@
       "sha512": "sha512-jAy3uHN1U9DpoT/TgLqDTEhlccn/4doOVxhSmmNsnoSsGfHT9Lwr634ac9D0YFujAhNw61nWF4UIpHyzv0aQww==",
       "path": "bouncycastle.netcore/1.8.3",
       "hashPath": "bouncycastle.netcore.1.8.3.nupkg.sha512"
+    },
+    "FontAwesome.WPF/4.7.0.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SXE080rnyWMm9Dt0BZzMxh89/o9teuSaqL1N+0O/XM/F/HU8JuZA4XaEKxjBigwZPHHU3/udTa0QMYCHkmH43Q==",
+      "path": "fontawesome.wpf/4.7.0.9",
+      "hashPath": "fontawesome.wpf.4.7.0.9.nupkg.sha512"
     },
     "Google.Protobuf/3.11.4": {
       "type": "package",
