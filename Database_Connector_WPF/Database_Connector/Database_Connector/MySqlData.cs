@@ -88,8 +88,6 @@ namespace Database_Connector {
             catch (MySqlException ex) {}
             finally { conn.Close(); }
 
-            usuarios = null;
-
             return usuarios;
         }
 

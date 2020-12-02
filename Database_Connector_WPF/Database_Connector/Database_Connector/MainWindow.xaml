@@ -167,10 +167,24 @@
             </Menu>
 
             <!-- Formulario -->
-            <StackPanel>
-                <StackPanel.Orientation>Vertical</StackPanel.Orientation>
-                <StackPanel.Margin>10</StackPanel.Margin>
+            <StackPanel Orientation="Vertical" Margin="10">
+
+                <!-- ID, Nombre, Usuario -->
+                <StackPanel Orientation="Horizontal">
+                    
+                    <!-- ID -->
+                    <DockPanel>
+                        <DockPanel.Height>Auto</DockPanel.Height>
+                        <Label Content="ID"/>
+                        <TextBox x:Name="tb_id" VerticalAlignment="Center"/>
+                    </DockPanel>
+                </StackPanel>
                 
+                <!-- Password, Hash -->
+                <StackPanel Orientation="Horizontal"></StackPanel>
+                
+                <!-- Fecha alta, Fecha baja -->
+                <StackPanel Orientation="Horizontal"></StackPanel>
             </StackPanel>
         </StackPanel>
         

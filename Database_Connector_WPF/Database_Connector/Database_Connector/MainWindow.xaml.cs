@@ -23,11 +23,17 @@ namespace Database_Connector {
             msqd = new MySqlData();
             if (msqd.checkConn() == true) {
 
+                par = new Dictionary<string, string>();
+                par.Add("id", "1");
+
                 List<Usuario> users = msqd.getUserData(par);
 
                 if (users != null) {
 
-                    foreach (var item in users) { MessageBox.Show(item._id.ToString()); }
+                    foreach (var item in users) {
+
+                        tb_id.Text = item._nombre.ToString();
+                    }
                 }
                 else { MessageBox.Show("Sin registros"); }
             }
