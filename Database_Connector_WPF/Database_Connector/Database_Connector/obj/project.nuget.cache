@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "gR7npP3GnGouJQFA2t0K/8wZHWU8p4VgFeKXhEe+bd/qdBmCe1CNs5PLnWKfurT+/W/v0/sN74GnL5Qg/CaBUg==",
+  "dgSpecHash": "OSD7JSw0ZDMdqEtoCunXpsgYlj3FCCvKrsfv7rjWsibJNg1bCxPUb6h5IX0Ev4DZh5ZKwNV9bzoqwtQIs8qxAA==",
   "success": true,
   "projectFilePath": "D:\\Github\\Sandbox\\Database_Connector_WPF\\Database_Connector\\Database_Connector\\Database_Connector.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AMedi\\.nuget\\packages\\bouncycastle.netcore\\1.8.3\\bouncycastle.netcore.1.8.3.nupkg.sha512",
+    "C:\\Users\\AMedi\\.nuget\\packages\\cryptsharpofficial\\2.1.0\\cryptsharpofficial.2.1.0.nupkg.sha512",
     "C:\\Users\\AMedi\\.nuget\\packages\\fontawesome.wpf\\4.7.0.9\\fontawesome.wpf.4.7.0.9.nupkg.sha512",
     "C:\\Users\\AMedi\\.nuget\\packages\\google.protobuf\\3.11.4\\google.protobuf.3.11.4.nupkg.sha512",
     "C:\\Users\\AMedi\\.nuget\\packages\\k4os.compression.lz4\\1.1.11\\k4os.compression.lz4.1.1.11.nupkg.sha512",
@@ -95,6 +96,16 @@
     "C:\\Users\\AMedi\\.nuget\\packages\\system.xml.xpath.xmldocument\\4.0.1\\system.xml.xpath.xmldocument.4.0.1.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"CryptSharpOfficial 2.1.0\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \".NETCoreApp,Version=v3.1\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "CryptSharpOfficial",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",

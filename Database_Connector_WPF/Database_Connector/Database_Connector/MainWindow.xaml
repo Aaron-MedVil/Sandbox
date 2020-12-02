@@ -95,7 +95,7 @@
                     <Button x:Name="btnReloadData" Click="btnReloadData_Click" Style="{StaticResource iconBtnContent}">
                         <DockPanel>
                             <fa:FontAwesome Icon="Refresh"/>
-                            <Label Content="Pruebas"/>
+                            <Label Content="Actualizar datos"/>
                         </DockPanel>
                     </Button>
 
@@ -170,7 +170,7 @@
             <StackPanel>
                 <StackPanel.Orientation>Vertical</StackPanel.Orientation>
                 <StackPanel.Margin>10</StackPanel.Margin>
-                <!-- <TextBox Text="Pruebas" Height="25" VerticalContentAlignment="Center"/> -->
+                
             </StackPanel>
         </StackPanel>
         

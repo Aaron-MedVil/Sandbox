@@ -19,6 +19,14 @@
           }
         }
       },
+      "CryptSharpOfficial/2.1.0": {
+        "runtime": {
+          "lib/CryptSharp.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0"
+          }
+        }
+      },
       "FontAwesome.WPF/4.7.0.9": {
         "runtime": {
           "lib/net40/FontAwesome.WPF.dll": {
@@ -1401,6 +1409,13 @@
       "sha512": "sha512-jAy3uHN1U9DpoT/TgLqDTEhlccn/4doOVxhSmmNsnoSsGfHT9Lwr634ac9D0YFujAhNw61nWF4UIpHyzv0aQww==",
       "path": "bouncycastle.netcore/1.8.3",
       "hashPath": "bouncycastle.netcore.1.8.3.nupkg.sha512"
+    },
+    "CryptSharpOfficial/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-t90jvDpTXoP4LTTHh/+HnBsOxQwOmlhS0hlqgocLKN0T5udAG8QuVtwcpGsjwK2Sl6YfRgflCGiSgeVWwF6+jw==",
+      "path": "cryptsharpofficial/2.1.0",
+      "hashPath": "cryptsharpofficial.2.1.0.nupkg.sha512"
     },
     "FontAwesome.WPF/4.7.0.9": {
       "type": "package",

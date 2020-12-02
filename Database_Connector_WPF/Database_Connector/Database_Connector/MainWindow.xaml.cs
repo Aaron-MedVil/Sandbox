@@ -1,17 +1,15 @@
-﻿using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using MySql.Data.MySqlClient;
+using System.Windows.Documents;
 
 namespace Database_Connector {
 
     public partial class MainWindow : Window {
 
-        // new MySqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString);
-        private MySqlConnection conn = null;
-        private MySqlDataReader myReader = null;
+        private MySqlData msqd = null;
+        private Dictionary<string, string> par = null;
 
         /// <summary>Funcion que carga los componentes</summary>
         public MainWindow() => InitializeComponent();
@@ -21,17 +19,19 @@ namespace Database_Connector {
         /// <param name="e">Argumentos de la accion</param>
         private void Window_Loaded(object sender, RoutedEventArgs e) {
 
-            /*try {
+            // Cargar datos de la base de datos
+            msqd = new MySqlData();
+            if (msqd.checkConn() == true) {
 
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM testtable", conn);
-                MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                adp.Fill(ds, "LoadDataBinding");
-                dgPruebas.DataContext = ds;
+                List<Usuario> users = msqd.getUserData(par);
+
+                if (users != null) {
+
+                    foreach (var item in users) { MessageBox.Show(item._id.ToString()); }
+                }
+                else { MessageBox.Show("Sin registros"); }
             }
-            catch (MySqlException ex) { MessageBox.Show(ex.ToString()); }
-            finally { conn.Close(); }*/
+            else { MessageBox.Show("Error de conexion"); }
         }
 
         /// <summary>Eventos para desplazarse por los registros</summary>
@@ -40,14 +40,13 @@ namespace Database_Connector {
         private void MenuItem_Click(object sender, RoutedEventArgs e) {
 
             MenuItem mi = (MenuItem)sender;
-
-            MessageBox.Show(mi.Tag.ToString());
+            string opt = mi.Tag.ToString();
         }
 
         private void btnReloadData_Click(object sender, RoutedEventArgs e) { }
 
-        private void btnNewReg_Click(object sender, RoutedEventArgs e) { }
+        private void btnNewReg_Click(object sender, RoutedEventArgs e) {}
 
-        private void btnRemoveReg_Click(object sender, RoutedEventArgs e) {  }
+        private void btnRemoveReg_Click(object sender, RoutedEventArgs e) {}
     }
 }
