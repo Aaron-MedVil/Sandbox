@@ -45,6 +45,29 @@
                 </Style>
             </Style.Resources>
         </Style>
+        <Style TargetType="Grid" x:Key="form-control">
+            <Setter Property="Margin" Value="0, 5, 0, 5"/>
+            <Style.Resources>
+                <Style TargetType="DockPanel">
+                    <Setter Property="LastChildFill" Value="True"/>
+                    <Setter Property="Margin" Value="5, 0, 5, 0"/>
+                    <Style.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="DockPanel.Dock" Value="Top"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="Margin" Value="0, 0, 0, 5"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="FontStyle" Value="Italic"/>
+                        </Style>
+                        <Style TargetType="TextBox">
+                            <Setter Property="Padding" Value="5"/>
+                            <Setter Property="Width" Value="Auto"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                        </Style>
+                    </Style.Resources>
+                </Style>
+            </Style.Resources>
+        </Style>
     </Window.Resources>
 
     <!-- Content -->
@@ -53,16 +76,16 @@
         <!-- Definicion de columnas -->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
-        
+
         <!-- Definicion de filas -->
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
+
         <!-- Title -->
         <Grid>
             <Grid.Row>0</Grid.Row>
@@ -80,7 +103,7 @@
             <Grid.RowSpan>3</Grid.RowSpan>
             <StackPanel.Background>Aquamarine</StackPanel.Background>
             <StackPanel.Orientation>Vertical</StackPanel.Orientation>
-            
+
             <!-- Panel de botones -->
             <DockPanel>
                 <DockPanel.VerticalAlignment>Top</DockPanel.VerticalAlignment>
@@ -124,7 +147,7 @@
             <StackPanel.Background>LightSlateGray</StackPanel.Background>
             <Grid.Column>1</Grid.Column>
             <Grid.Row>1</Grid.Row>
-            
+
             <!-- Menu superior -->
             <Menu Style="{StaticResource menuFormStyle}">
                 <Menu.HorizontalAlignment>Center</Menu.HorizontalAlignment>
@@ -138,7 +161,7 @@
                     </MenuItem.Header>
                 </MenuItem>
                 <Separator/>
-                
+
                 <!-- Registro Siguiente -->
                 <MenuItem Click="MenuItem_Click">
                     <MenuItem.Tag>registroSiguiente</MenuItem.Tag>
@@ -147,7 +170,7 @@
                     </MenuItem.Header>
                 </MenuItem>
                 <Separator/>
-                
+
                 <!-- Registro anterior -->
                 <MenuItem Click="MenuItem_Click">
                     <MenuItem.Tag>registoAnterior</MenuItem.Tag>
@@ -156,7 +179,7 @@
                     </MenuItem.Header>
                 </MenuItem>
                 <Separator/>
-                
+
                 <!-- Ultimo registro -->
                 <MenuItem Click="MenuItem_Click">
                     <MenuItem.Tag>ultimoRegistro</MenuItem.Tag>
@@ -166,28 +189,89 @@
                 </MenuItem>
             </Menu>
 
+            <!-- Botonera editar/crear -->
+            <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center" Visibility="Collapsed">
+                <Button Content="Pruebas" Width="150" Height="30"/>
+                <Button Content="Pruebas" Width="150" Height="30"/>
+            </StackPanel>
+
             <!-- Formulario -->
-            <StackPanel Orientation="Vertical" Margin="10">
+            <StackPanel>
+                <StackPanel.Orientation>Vertical</StackPanel.Orientation>
+                <StackPanel.Margin>10</StackPanel.Margin>
 
                 <!-- ID, Nombre, Usuario -->
-                <StackPanel Orientation="Horizontal">
-                    
+                <Grid Style="{StaticResource form-control}">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+
                     <!-- ID -->
-                    <DockPanel>
-                        <DockPanel.Height>Auto</DockPanel.Height>
-                        <Label Content="ID"/>
-                        <TextBox x:Name="tb_id" VerticalAlignment="Center"/>
+                    <DockPanel Grid.Column="0">
+                        <TextBlock Text="ID"/>
+                        <TextBox x:Name="tb_id"/>
                     </DockPanel>
-                </StackPanel>
-                
+
+                    <!-- Nombre -->
+                    <DockPanel Grid.Column="1">
+                        <TextBlock Text="Nombre"/>
+                        <TextBox x:Name="tb_nombre"/>
+                    </DockPanel>
+
+                    <!-- Usuario -->
+                    <DockPanel Grid.Column="2">
+                        <TextBlock Text="Usuario"/>
+                        <TextBox x:Name="tb_usuario"/>
+                    </DockPanel>
+                </Grid>
+
                 <!-- Password, Hash -->
-                <StackPanel Orientation="Horizontal"></StackPanel>
-                
+                <Grid Style="{StaticResource form-control}">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.5*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <!-- Contraseña -->
+                    <DockPanel Grid.Column="0">
+                        <TextBlock Text="Contraseña"/>
+                        <TextBox x:Name="tb_password"/>
+                    </DockPanel>
+
+                    <!-- Hash -->
+                    <DockPanel Grid.Column="1">
+                        <TextBlock Text="Hash"/>
+                        <TextBox x:Name="tb_hash"/>
+                    </DockPanel>
+                </Grid>
+
                 <!-- Fecha alta, Fecha baja -->
-                <StackPanel Orientation="Horizontal"></StackPanel>
+                <Grid Style="{StaticResource form-control}">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.5*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Fecha alta -->
+                    <DockPanel Grid.Column="0">
+                        <TextBlock Text="Fecha alta"/>
+                        <TextBox x:Name="tb_fecha_alta"/>
+                    </DockPanel>
+
+                    <!-- Fecha baja -->
+                    <DockPanel Grid.Column="1">
+                        <TextBlock Text="Fecha baja"/>
+                        <TextBox x:Name="tb_fecha_baja"/>
+                    </DockPanel>
+                </Grid>
             </StackPanel>
         </StackPanel>
-        
+
         <!-- DataTable -->
         <StackPanel x:Name="gridDataTable">
             <StackPanel.Orientation>Horizontal</StackPanel.Orientation>

@@ -32,7 +32,13 @@ namespace Database_Connector {
 
                     foreach (var item in users) {
 
-                        tb_id.Text = item._nombre.ToString();
+                        tb_id.Text = item._id.ToString();
+                        tb_nombre.Text = item._nombre.ToString();
+                        tb_usuario.Text = item._usuario.ToString();
+                        tb_password.Text = item._password.ToString();
+                        tb_hash.Text = item._hash.ToString();
+                        tb_fecha_alta.Text = item._fecha_alta.ToString();
+                        tb_fecha_baja.Text = item._fecha_baja.ToString();
                     }
                 }
                 else { MessageBox.Show("Sin registros"); }
