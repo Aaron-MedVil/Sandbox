@@ -7,69 +7,6 @@
         mc:Ignorable="d"
         Title="Database Connector" MinHeight="450" MinWidth="800" WindowState="Maximized" Loaded="Window_Loaded">
 
-    <!-- Resources -->
-    <Window.Resources>
-        <Style TargetType="Menu" x:Key="menuFormStyle">
-            <Style.Resources>
-                <Style TargetType="MenuItem">
-                    <Setter Property="Height" Value="40"/>
-                    <Setter Property="Padding" Value="20, 0, 20, 0"/>
-                    <Style.Resources>
-                        <Style TargetType="fa:FontAwesome">
-                            <Setter Property="FontSize" Value="30"/>
-                            <Setter Property="FontWeight" Value="Bold"/>
-                        </Style>
-                    </Style.Resources>
-                </Style>
-            </Style.Resources>
-        </Style>
-        <Style TargetType="Label" x:Key="labelTitle">
-            <Setter Property="FontSize" Value="35"/>
-            <Setter Property="FontStyle" Value="Italic"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        </Style>
-        <Style TargetType="Button" x:Key="iconBtnContent">
-            <Setter Property="Height" Value="30"/>
-            <Setter Property="Margin" Value="5, 2.5"/>
-            <Style.Resources>
-                <Style TargetType="DockPanel">
-                    <Style.Resources>
-                        <Style TargetType="fa:FontAwesome">
-                            <Setter Property="VerticalAlignment" Value="Center"/>
-                        </Style>
-                        <Style TargetType="Label">
-                            <Setter Property="VerticalAlignment" Value="Center"/>
-                        </Style>
-                    </Style.Resources>
-                </Style>
-            </Style.Resources>
-        </Style>
-        <Style TargetType="Grid" x:Key="form-control">
-            <Setter Property="Margin" Value="0, 5, 0, 5"/>
-            <Style.Resources>
-                <Style TargetType="DockPanel">
-                    <Setter Property="LastChildFill" Value="True"/>
-                    <Setter Property="Margin" Value="5, 0, 5, 0"/>
-                    <Style.Resources>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="DockPanel.Dock" Value="Top"/>
-                            <Setter Property="VerticalAlignment" Value="Center"/>
-                            <Setter Property="Margin" Value="0, 0, 0, 5"/>
-                            <Setter Property="FontWeight" Value="Bold"/>
-                            <Setter Property="FontStyle" Value="Italic"/>
-                        </Style>
-                        <Style TargetType="TextBox">
-                            <Setter Property="Padding" Value="5"/>
-                            <Setter Property="Width" Value="Auto"/>
-                            <Setter Property="VerticalAlignment" Value="Center"/>
-                        </Style>
-                    </Style.Resources>
-                </Style>
-            </Style.Resources>
-        </Style>
-    </Window.Resources>
-
     <!-- Content -->
     <Grid>
 
@@ -93,7 +30,7 @@
             <Grid.Background>LightYellow</Grid.Background>
             <StackPanel>
                 <StackPanel.VerticalAlignment>Center</StackPanel.VerticalAlignment>
-                <Label Content="REGISTROS USUARIOS" Style="{StaticResource labelTitle}"/>
+                <Label Content="REGISTROS USUARIOS" Style="{StaticResource label-title}"/>
             </StackPanel>
         </Grid>
 
@@ -114,16 +51,8 @@
                 <!-- Panel Botonera -->
                 <StackPanel>
 
-                    <!-- Boton actualizar datos -->
-                    <Button x:Name="btnReloadData" Click="btnReloadData_Click" Style="{StaticResource iconBtnContent}">
-                        <DockPanel>
-                            <fa:FontAwesome Icon="Refresh"/>
-                            <Label Content="Actualizar datos"/>
-                        </DockPanel>
-                    </Button>
-
                     <!-- Boton nuevo registro -->
-                    <Button x:Name="btnNewReg" Click="btnNewReg_Click" Style="{StaticResource iconBtnContent}">
+                    <Button x:Name="btnNewReg" Click="btnNewReg_Click" Style="{StaticResource btn-icon-content}">
                         <DockPanel>
                             <fa:FontAwesome Icon="Plus"/>
                             <Label Content="Nuevo registro"/>
@@ -131,10 +60,18 @@
                     </Button>
 
                     <!-- Eliminar registro -->
-                    <Button x:Name="btnRemoveReg" Click="btnRemoveReg_Click" Style="{StaticResource iconBtnContent}">
+                    <Button x:Name="btnRemoveReg" Click="btnRemoveReg_Click" Style="{StaticResource btn-icon-content}">
                         <DockPanel>
                             <fa:FontAwesome Icon="Trash"/>
                             <Label Content="Eliminar registro"/>
+                        </DockPanel>
+                    </Button>
+                    
+                    <!-- Editar registro -->
+                    <Button x:Name="btnEditReg" Click="btnEditReg_Click" Style="{StaticResource btn-icon-content}">
+                        <DockPanel>
+                            <fa:FontAwesome Icon="Edit"/>
+                            <Label Content="Editar registro"/>
                         </DockPanel>
                     </Button>
                 </StackPanel>
@@ -149,7 +86,7 @@
             <Grid.Row>1</Grid.Row>
 
             <!-- Menu superior -->
-            <Menu Style="{StaticResource menuFormStyle}">
+            <Menu Style="{StaticResource menu-form-style}">
                 <Menu.HorizontalAlignment>Center</Menu.HorizontalAlignment>
                 <Menu.Height>40</Menu.Height>
 
@@ -188,12 +125,6 @@
                     </MenuItem.Header>
                 </MenuItem>
             </Menu>
-
-            <!-- Botonera editar/crear -->
-            <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center" Visibility="Collapsed">
-                <Button Content="Pruebas" Width="150" Height="30"/>
-                <Button Content="Pruebas" Width="150" Height="30"/>
-            </StackPanel>
 
             <!-- Formulario -->
             <StackPanel>
@@ -239,13 +170,13 @@
                     <!-- Contraseña -->
                     <DockPanel Grid.Column="0">
                         <TextBlock Text="Contraseña"/>
-                        <TextBox x:Name="tb_password"/>
+                        <PasswordBox x:Name="tb_password"/>
                     </DockPanel>
 
                     <!-- Hash -->
                     <DockPanel Grid.Column="1">
                         <TextBlock Text="Hash"/>
-                        <TextBox x:Name="tb_hash"/>
+                        <PasswordBox x:Name="tb_hash"/>
                     </DockPanel>
                 </Grid>
 

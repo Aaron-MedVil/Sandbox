@@ -30,16 +30,15 @@ namespace Database_Connector {
 
                 if (users != null) {
 
-                    foreach (var item in users) {
+                    var u = users[0];
 
-                        tb_id.Text = item._id.ToString();
-                        tb_nombre.Text = item._nombre.ToString();
-                        tb_usuario.Text = item._usuario.ToString();
-                        tb_password.Text = item._password.ToString();
-                        tb_hash.Text = item._hash.ToString();
-                        tb_fecha_alta.Text = item._fecha_alta.ToString();
-                        tb_fecha_baja.Text = item._fecha_baja.ToString();
-                    }
+                    tb_id.Text = u._id.ToString();
+                    tb_nombre.Text = u._nombre;
+                    tb_usuario.Text = u._usuario;
+                    tb_password.Password = u._password;
+                    tb_hash.Password = u._hash;
+                    tb_fecha_alta.Text = u._fecha_alta;
+                    tb_fecha_baja.Text = u._fecha_baja;
                 }
                 else { MessageBox.Show("Sin registros"); }
             }
@@ -55,10 +54,12 @@ namespace Database_Connector {
             string opt = mi.Tag.ToString();
         }
 
-        private void btnReloadData_Click(object sender, RoutedEventArgs e) { }
-
         private void btnNewReg_Click(object sender, RoutedEventArgs e) {}
 
         private void btnRemoveReg_Click(object sender, RoutedEventArgs e) {}
+
+        private void btnEditReg_Click(object sender, RoutedEventArgs e) {
+
+        }
     }
 }
