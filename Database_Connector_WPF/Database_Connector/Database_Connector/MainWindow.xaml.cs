@@ -23,7 +23,9 @@ namespace Database_Connector {
             msqd = new MySqlData();
             if (msqd.checkConn() == true) {
 
-                par = new Dictionary<string, string>();
+                MessageBox.Show("Funciona");
+
+                /*par = new Dictionary<string, string>();
                 par.Add("id", "1");
 
                 List<Usuario> users = msqd.getUserData(par);
@@ -40,7 +42,7 @@ namespace Database_Connector {
                     tb_fecha_alta.Text = u._fecha_alta;
                     tb_fecha_baja.Text = u._fecha_baja;
                 }
-                else { MessageBox.Show("Sin registros"); }
+                else { MessageBox.Show("Sin registros"); }*/
             }
             else { MessageBox.Show("Error de conexion"); }
         }
@@ -58,8 +60,6 @@ namespace Database_Connector {
 
         private void btnRemoveReg_Click(object sender, RoutedEventArgs e) {}
 
-        private void btnEditReg_Click(object sender, RoutedEventArgs e) {
-
-        }
+        private void btnEditReg_Click(object sender, RoutedEventArgs e) {}
     }
 }
