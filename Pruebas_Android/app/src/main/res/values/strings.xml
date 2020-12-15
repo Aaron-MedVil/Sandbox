@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Pruebas_Android</string>
+    <string name="btnLoadArr">Cargar datos</string>
 </resources>
