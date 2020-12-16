@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Pruebas_Android</string>
-    <string name="btnLoadArr">Cargar datos</string>
+    <string name="btnLoadArr">Leer Array</string>
+    <string name="btnLoadJson">Leer JSON</string>
+    <string name="btnAceptar">Aceptar</string>
+    <string name="emptyData">Contenedor de datos está vacío</string>
+    <string name="dialArrayTitle">Datos del array</string>
+    <string name="dialJsonTitle">Datos del fichero JSON</string>
 </resources>
