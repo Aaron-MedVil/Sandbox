@@ -9,8 +9,16 @@
 
     <Button
         android:onClick="loadArrayData"
-        android:id="@+id/btnLoadArr1"
+        android:id="@+id/btnLoadArrData"
         android:text="@string/btnLoadArr"
+        android:textSize="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"/>
+
+    <Button
+        android:onClick="loadJsonData"
+        android:id="@+id/btnLoadJsonData"
+        android:text="@string/btnLoadJson"
         android:textSize="25sp"
         android:layout_width="match_parent"
         android:layout_height="50sp"/>
