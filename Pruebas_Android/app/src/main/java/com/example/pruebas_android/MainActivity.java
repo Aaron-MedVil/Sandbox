@@ -12,6 +12,7 @@ import android.view.View;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONStringer;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -85,6 +86,13 @@ public class MainActivity extends AppCompatActivity {
 
         try {
 
+
+
+
+
+            /* ========================================================================================= */
+
+
             // Recuperamos los datos del JSON
             InputStream is = getResources().openRawResource(R.raw.datos);
 
@@ -95,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
             is.read(buffer);
 
             // Asignamos codificacion de caracteres al json
-            String strJson = new String(buffer,"UTF-8");
+            String strJson = new String(buffer, "UTF-8");
 
             // Cerramos el flujo de datos
             is.close();
@@ -106,7 +114,9 @@ public class MainActivity extends AppCompatActivity {
             // Creamos un JSONArray de la instancia de JSONObject
             JSONArray jsonArray = jsonRootObject.optJSONArray("personas");
 
-            Log.d("cosa", jsonArray.toString());
+
+            JSONStringer jsonStringer = new JSONStringer();
+
         } catch (JSONException | IOException e) {e.printStackTrace();}
     }
 }
