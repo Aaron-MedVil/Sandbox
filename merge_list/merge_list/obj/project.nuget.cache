@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "dUCDpRoPzDjudoXydks3b2VmeXDRsnmF/ZEk0P/O2DDPT8gBhXea7nK1rsZnML36Vufl3ntyQ+wGey+CTo9M1g==",
+  "success": true,
+  "projectFilePath": "D:\\Github\\Sandbox\\merge_list\\merge_list\\merge_list.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\AMedi\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

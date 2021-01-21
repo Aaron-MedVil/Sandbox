@@ -1,0 +1,15 @@
+[
+  { "Nombre": "Stinger", "Tipo": "SMG", "Precio": 1000 },
+  { "Nombre": "Spectre", "Tipo": "SMG", "Precio": 1600 },
+  { "Nombre": "Bucky", "Tipo": "Shotgun", "Precio": 900 },
+  { "Nombre": "Judge", "Tipo": "Shotgun", "Precio": 1600 },
+  { "Nombre": "Bulldog", "Tipo": "Rifle", "Precio": 2100 },
+  { "Nombre": "Guardian", "Tipo": "Rifle", "Precio": 2400 },
+  { "Nombre": "Vandal", "Tipo": "Rifle", "Precio": 2900 },
+  { "Nombre": "Phantom", "Tipo": "Rifle", "Precio": 2900 },
+  { "Nombre": "Marshal", "Tipo": "Sniper", "Precio": 1100 },
+  { "Nombre": "Operator", "Tipo": "Sniper", "Precio": 5000 },
+  { "Nombre": "Ares", "Tipo": "Heavy", "Precio": 1600 },
+  { "Nombre": "Odin", "Tipo": "Heavy", "Precio": 3200 },
+  { "Nombre": "Knife", "Tipo": "Melee", "Precio": 0 }
+]

@@ -1,0 +1,7 @@
+[
+  { "Nombre": "Classic", "Tipo": "Sidearm", "Precio": 0 },
+  { "Nombre": "Shorty", "Tipo": "Sidearm", "Precio": 200 },
+  { "Nombre": "Frenzy", "Tipo": "Sidearm", "Precio": 400 },
+  { "Nombre": "Ghost", "Tipo": "Sidearm", "Precio": 500 },
+  { "Nombre": "Sheriff", "Tipo": "Sidearm", "Precio": 800 }
+]
