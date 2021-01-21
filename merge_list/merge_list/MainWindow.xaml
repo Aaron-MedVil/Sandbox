@@ -58,7 +58,7 @@
                 <Button x:Name="merge_list" Click="merge_list_Click" Padding="5" Margin="5" Content="Cargar datos"/>
                 
                 <!-- Boton Actualizar Base Datos -->
-                <Button x:Name="update_database" Click="update_database_Click" Padding="5" Margin="5" Content="Actualizar Base de Datos"/>
+                <Button x:Name="update_database" Click="update_database_Click" Visibility="Hidden" Padding="5" Margin="5" Content="Actualizar Base de Datos"/>
 
                 <!-- Tabla Datos LISTA3 -->
                 <DataGrid x:Name="dg_LIST_3" ItemsSource="{Binding Guns}">

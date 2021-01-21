@@ -43,6 +43,7 @@ namespace merge_list {
             _LISTA3.AddRange(_LISTA2);
             dg_LIST_3.ItemsSource = _LISTA3;
             dg_LIST_3.Visibility = Visibility.Visible;
+            update_database.Visibility = Visibility.Visible;
         }
 
         /// <summary>Carga los datos del json JSON_1 en la lista LISTA_1</summary>
