@@ -18,3 +18,10 @@ D:\Github\Sandbox\merge_list\merge_list\obj\Debug\netcoreapp3.1\merge_list.pdb
 D:\Github\Sandbox\merge_list\merge_list\obj\Debug\netcoreapp3.1\merge_list.genruntimeconfig.cache
 D:\Github\Sandbox\merge_list\merge_list\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 D:\Github\Sandbox\merge_list\merge_list\obj\Debug\netcoreapp3.1\merge_list.csproj.CopyComplete
+D:\Github\Sandbox\merge_list\merge_list\bin\Debug\netcoreapp3.1\merge_list.dll.config
+D:\Github\Sandbox\merge_list\merge_list\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+D:\Github\Sandbox\merge_list\merge_list\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\Github\Sandbox\merge_list\merge_list\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\Github\Sandbox\merge_list\merge_list\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\Github\Sandbox\merge_list\merge_list\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Github\Sandbox\merge_list\merge_list\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

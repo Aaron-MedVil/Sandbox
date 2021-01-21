@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Windows;
 using Newtonsoft.Json;
 
@@ -64,6 +63,27 @@ namespace merge_list {
                 dg_LIST_2.ItemsSource = _LISTA2;
             }
             catch (Exception err) { MessageBox.Show("Error al cargar el fichero. Pongase en contacto con el administrador."); }
+        }
+
+        /// <summary>Actualiza los datos de la base de datos</summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void update_database_Click(object sender, RoutedEventArgs e) {
+
+            Modelo.GunsDb gDb = new Modelo.GunsDb();
+
+            if (gDb.dbConn()) {
+
+                foreach (var i in _LISTA3) {
+
+                    // Si no existe el registro llama a la funcion de crearlo / Si existe el registro llama a la funcion de editarlo
+                    if (gDb.existeRegistro(i.Nombre.ToString()) <= 0) { gDb.crearRegistro(i.Nombre.ToString(), i.Tipo.ToString(), i.Precio); }
+                    else { gDb.editaRegistro(i.Nombre.ToString(), i.Tipo.ToString(), i.Precio); }
+                }
+
+                MessageBox.Show("Base de datos actualizada correctamente");
+            }
+            else { MessageBox.Show("No se puede conectar a la base de datos"); }
         }
     }
 }

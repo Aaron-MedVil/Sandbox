@@ -6,7 +6,6 @@
         mc:Ignorable="d"
         Title="List Merge" MinHeight="450" MinWidth="800" WindowState="Maximized"
         Loaded="Window_Loaded">
-    
     <Grid>
 
         <!-- Definicion de columnas -->
@@ -23,19 +22,23 @@
 
         <!-- Contenedor datos LISTA_1 -->
         <Grid Grid.Column="0" Grid.Row="0">
+            
+            <!-- Tabla Datos Lista 1 -->
             <DataGrid x:Name="dg_LIST_1" ItemsSource="{Binding Guns}">
                 <DataGrid.AutoGenerateColumns>False</DataGrid.AutoGenerateColumns>
                 <DataGrid.CanUserAddRows>false</DataGrid.CanUserAddRows>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Nombre" Width="2*" Binding="{Binding Nombre}" />
-                    <DataGridTextColumn Header="Tipo" Width="*" Binding="{Binding Tipo}" />
-                    <DataGridTextColumn Header="Precio" Width="*" Binding="{Binding Precio}" />
+                    <DataGridTextColumn Header="Nombre" Width="2*" Binding="{Binding Nombre}"/>
+                    <DataGridTextColumn Header="Tipo" Width="*" Binding="{Binding Tipo}"/>
+                    <DataGridTextColumn Header="Precio" Width="*" Binding="{Binding Precio}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
 
         <!-- Contenedor datos LISTA_2 -->
         <Grid Grid.Column="0" Grid.Row="1">
+            
+            <!-- Tabla Datos LISTA 2 -->
             <DataGrid x:Name="dg_LIST_2" ItemsSource="{Binding Guns}">
                 <DataGrid.AutoGenerateColumns>False</DataGrid.AutoGenerateColumns>
                 <DataGrid.CanUserAddRows>false</DataGrid.CanUserAddRows>
@@ -50,15 +53,22 @@
         <!-- Contenedor datos LISTA_3 -->
         <Grid Grid.Column="1" Grid.RowSpan="2">
             <StackPanel Orientation="Vertical">
+                
+                <!-- Boton Merge Listas -->
                 <Button x:Name="merge_list" Click="merge_list_Click" Padding="5" Margin="5" Content="Cargar datos"/>
+                
+                <!-- Boton Actualizar Base Datos -->
+                <Button x:Name="update_database" Click="update_database_Click" Padding="5" Margin="5" Content="Actualizar Base de Datos"/>
+
+                <!-- Tabla Datos LISTA3 -->
                 <DataGrid x:Name="dg_LIST_3" ItemsSource="{Binding Guns}">
                     <DataGrid.AutoGenerateColumns>False</DataGrid.AutoGenerateColumns>
                     <DataGrid.CanUserAddRows>false</DataGrid.CanUserAddRows>
                     <DataGrid.Visibility>Hidden</DataGrid.Visibility>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Nombre" Width="2*" Binding="{Binding Nombre}" />
-                        <DataGridTextColumn Header="Tipo" Width="*" Binding="{Binding Tipo}" />
-                        <DataGridTextColumn Header="Precio" Width="*" Binding="{Binding Precio}" />
+                        <DataGridTextColumn Header="Nombre" Width="2*" Binding="{Binding Nombre}"/>
+                        <DataGridTextColumn Header="Tipo" Width="*" Binding="{Binding Tipo}"/>
+                        <DataGridTextColumn Header="Precio" Width="*" Binding="{Binding Precio}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>
