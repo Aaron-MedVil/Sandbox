@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Windows;
 
 namespace merge_list.Modelo {
 
@@ -64,6 +62,14 @@ namespace merge_list.Modelo {
         public void crearRegistro(string nombre, string tipo, int precio) {
 
             conn.Open();
+
+            #region Otro metodo para crear la sentencia
+            /*
+            cmd = new SqlCommand();
+            cmd.CommandText = "INSERT INTO Guns (Nombre, Tipo, Precio) VALUES (@nombre, @tipo, @precio)";
+            cmd.Connection = conn;
+            */
+            #endregion
 
             // Crea la sentencia de insertar en la base de datos
             cmd = new SqlCommand("INSERT INTO Guns (Nombre, Tipo, Precio) VALUES (@nombre, @tipo, @precio)", conn);
