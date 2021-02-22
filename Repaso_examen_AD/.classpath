@@ -8,5 +8,6 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="D:/Github/Sandbox/Repaso_examen_AD/librerias/hsqldb.jar"/>
 	<classpathentry kind="lib" path="D:/Github/Sandbox/Repaso_examen_AD/librerias/h2-1.4.191.jar"/>
+	<classpathentry kind="lib" path="D:/Github/Sandbox/Repaso_examen_AD/librerias/sqlite-jdbc-3.8.11.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
